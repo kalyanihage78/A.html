@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ShikshaSetu Dashboard</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f5f6fa;
+}
+
+/* LOGIN PAGE */
+#loginPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.login-box input {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: 250px;
+}
+
+button {
+  padding: 10px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* DASHBOARD */
+#dashboard {
+  display: none;
+}
+
+header {
+  background: #4f46e5;
+  color: white;
+  padding: 15px;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background: #2f3640;
+  color: white;
+  height: 100vh;
+  padding: 20px;
+}
+
+.sidebar button {
+  width: 100%;
+  margin: 10px 0;
+  background: #353b48;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="loginPage">
+  <div class="login-box">
+    <h2>Login</h2>
+    <input type="text" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard">
+  <header>
+    <h2>ShikshaSetu Dashboard</h2>
+  </header>
+
+  <div class="container">
+    
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <button onclick="showAlert('Dashboard')">Dashboard</button>
+      <button onclick="showAlert('Scholarships')">Scholarships</button>
+      <button onclick="showAlert('Eligibility Checker')">Eligibility</button>
+      <button onclick="showAlert('Apply')">Apply</button>
+      <button onclick="showAlert('Profile')">Profile</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+      <h2>Welcome Back 👩‍🎓</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Total Scholarships</h3>
+          <p>5</p>
+        </div>
+
+        <div class="card">
+          <h3>Eligible Scholarships</h3>
+          <p>0</p>
+        </div>
+
+        <div class="card">
+          <h3>Upcoming Deadlines</h3>
+          <p>5</p>
+        </div>
+
+        <div class="card">
+          <h3>Notifications</h3>
+          <p>0</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function login() {
+  document.getElementById("loginPage").style.display = "none";
+  document.getElementById("dashboard").style.display = "block";
+}
+
+function logout() {
+  document.getElementById("loginPage").style.display = "flex";
+  document.getElementById("dashboard").style.display = "none";
+}
+
+function showAlert(name) {
+  alert(name + " button clicked!");
+}
+</script>
+
+</body>
+</html>
